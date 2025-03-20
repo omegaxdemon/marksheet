@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+</head>
+<body bgcolor="#a122b7">
+    <center>
+        <form action="result()">
+        <div id="sheet" style="margin-top: 3%;border: 2px midnightblue solid;border-radius: 50px;height: 450px;background-color: aqua;width: 800px;">
+            <h1 style="background-color: red; width: 100%; margin-top: 0px; border-radius: 10px;">MARKSHEET</h1>
+            <br><br>
+            <div style="display: flex;">
+                <p style="margin-left: 2%;">Subject 1</p>
+                <input id="s1" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;">Out Of</p>
+                <input id="o1" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;" >Score</p>
+                <div id="res1" style="background-color: rgb(213, 199, 199); width: 100px; height: 23px; margin-left: 2%; margin-top: 1.5%; border: 2px black solid;"></div>
+            </div>
+            <div style="display: flex;">
+                <p style="margin-left: 2%;">Subject 2</p>
+                <input id="s2" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;">Out Of</p>
+                <input id="o2" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;" >Score</p>
+                <div id="res2" style="background-color: rgb(213, 199, 199); width: 100px; height: 23px; margin-left: 2%; margin-top: 1.5%; border: 2px black solid;"></div>
+            </div>
+            <div style="display: flex;">
+                <p style="margin-left: 2%;">Subject 3</p>
+                <input id="s3" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;">Out Of</p>
+                <input id="o3" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;" >Score</p>
+                <div id="res3" style="background-color: rgb(213, 199, 199); width: 100px; height: 23px; margin-left: 2%; margin-top: 1.5%; border: 2px black solid;"></div>
+            </div>
+            <div style="display: flex;">
+                <p style="margin-left: 2%;">Subject 4</p>
+                <input id="s4" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;">Out Of</p>
+                <input id="o4" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;" >Score</p>
+                <div id="res4" style="background-color: rgb(213, 199, 199); width: 100px; height: 23px; margin-left: 2%; margin-top: 1.5%; border: 2px black solid;"></div>
+            </div>
+            <div style="display: flex;">
+                <p style="margin-left: 2%;">Subject 5</p>
+                <input id="s5" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;">Out Of</p>
+                <input id="o5" type="number" placeholder="Enter Marks" style="height: 20px;margin-left: 2%;margin-top: 1.5%;">
+                <p style="margin-left: 2%;" >Score</p>
+                <div id="res5" style="background-color: rgb(213, 199, 199); width: 100px; height: 23px; margin-left: 2%; margin-top: 1.5%; border: 2px black solid;"></div>
+            </div>
+            <center>
+                <div style="display: flex; justify-content: center;">
+                    <div id="res" style="background-color: rgb(213, 199, 199); width: 100px; height: 20px; margin: 1%; border: 1px black solid;"></div>
+                    <div id="grade" style="background-color: rgb(213, 199, 199); width: 100px; height: 20px; margin: 1%; border: 1px black solid;"></div>
+                </div>
+            </center>
+            <center>
+                <div style="display: flex; justify-content: center;">
+                    <div style=" width: 100px; height: 20px; margin: 1%;"><b>Percentage</b></div>
+                    <div style=" width: 100px; height: 20px; margin: 1%;"><b>Grade</b></div>
+                </div>
+            </center>
+            <center>
+                <div>
+                    <button type="button" onclick="result()" style="background-color: greenyellow; width: 100px; height: 20px;">MARKS</button>
+                    <button type="reset" onclick="document.getElementById('res5').innerHTML='',document.getElementById('res').innerHTML='', document.getElementById('grade').innerHTML='',document.getElementById('res1').innerHTML='',document.getElementById('res2').innerHTML='',document.getElementById('res3').innerHTML='',document.getElementById('res4').innerHTML=''"  style="background-color: red; width: 100px; height: 20px; color: white;">RESET</button>
+                </div>
+            </center>
+        </div>
+    </form>
+    </center>
+
+    <script>
+        function result()
+        {
+            let err=0;
+            let m1,m2,m3,m4,m5;
+            m1=document.getElementById('s1').value;
+            m2=document.getElementById('s2').value;
+            m3=document.getElementById('s3').value;
+            m4=document.getElementById('s4').value;
+            m5=document.getElementById('s5').value;
+            let t1,t2,t3,t4,t5;
+            t1=document.getElementById('o1').value;
+            t2=document.getElementById('o2').value;
+            t3=document.getElementById('o3').value;
+            t4=document.getElementById('o4').value;
+            t5=document.getElementById('o5').value;
+            let s1,s2,s3,s4,s5;
+            s1=parseFloat(m1/t1*100).toFixed(2);
+            s2=parseFloat(m2/t2*100).toFixed(2);
+            s3=parseFloat(m3/t3*100).toFixed(2);
+            s4=parseFloat(m4/t4*100).toFixed(2);
+            s5=parseFloat(m5/t5*100).toFixed(2);
+          
+            /*1st One*/
+          
+            if(s1<=100){
+            document.getElementById('res1').innerHTML=s1;
+            if(s1<=40)
+            {document.getElementById('res1').style.backgroundColor='red';
+            document.getElementById('res1').style.color='white';
+            }
+            else if(s1>=95)
+            {document.getElementById('res1').style.backgroundColor='greenyellow';}
+            else
+            {document.getElementById('res1').style.backgroundColor='rgb(213, 199, 199)';}
+            }
+            else{
+                alert("Enter valid marks");
+                document.getElementById('res1').innerHTML="Enter valid marks";
+                document.getElementById('res1').style.color='white';
+                document.getElementById('res1').style.backgroundColor='red';
+                document.getElementById('res1').style.fontSize='smaller';
+                err++;
+            }
+           
+           /*2nd One*/
+
+            if(s2<=100){
+            document.getElementById('res2').innerHTML=s2;
+            if(s2<=40)
+            {document.getElementById('res2').style.backgroundColor='red';
+            document.getElementById('res2').style.color='white';
+            }
+            else if(s2>=95)
+            {document.getElementById('res2').style.backgroundColor='greenyellow';}
+            else
+            {document.getElementById('res2').style.backgroundColor='rgb(213, 199, 199)';}
+            }
+            else{
+                alert("Enter valid marks");
+                document.getElementById('res2').innerHTML="Enter valid marks";
+                document.getElementById('res2').style.color='white';
+                document.getElementById('res2').style.backgroundColor='red';
+                document.getElementById('res2').style.fontSize='smaller';
+                err++;
+            }
+           
+           /*3rd One*/
+
+            if(s3<=100){
+            document.getElementById('res3').innerHTML=s3;
+            if(s3<=40)
+            {document.getElementById('res3').style.backgroundColor='red';
+            document.getElementById('res3').style.color='white';
+            }
+            else if(s3>=95)
+            {document.getElementById('res3').style.backgroundColor='greenyellow';}
+            else
+            {document.getElementById('res3').style.backgroundColor='rgb(213, 199, 199)';}
+            }
+            else{
+                alert("Enter valid marks");
+                document.getElementById('res3').innerHTML="Enter valid marks";
+                document.getElementById('res3').style.color='white';
+                document.getElementById('res3').style.backgroundColor='red';
+                document.getElementById('res3').style.fontSize='smaller';
+                err++;
+            }
+           
+           /*4th One*/
+
+            if(s4<=100){
+            document.getElementById('res4').innerHTML=s4;
+            if(s4<=40)
+            {document.getElementById('res4').style.backgroundColor='red';
+            document.getElementById('res4').style.color='white';
+            }
+            else if(s4>=95)
+            {document.getElementById('res4').style.backgroundColor='greenyellow';}
+            else
+            {document.getElementById('res4').style.backgroundColor='rgb(213, 199, 199)';}
+            }
+            else{
+                alert("Enter valid marks");
+                document.getElementById('res4').innerHTML="Enter valid marks";
+                document.getElementById('res4').style.color='white';
+                document.getElementById('res4').style.backgroundColor='red';
+                document.getElementById('res4').style.fontSize='smaller';
+                err++;
+            }
+
+            /*5th One*/
+            
+            if(s5<=100){
+            document.getElementById('res5').innerHTML=s5;
+            if(s5<=40)
+            {document.getElementById('res5').style.backgroundColor='red';
+            document.getElementById('res5').style.color='white';
+            }
+            else if(s5>=95)
+            {document.getElementById('res5').style.backgroundColor='greenyellow';}
+            else
+            {document.getElementById('res5').style.backgroundColor='rgb(213, 199, 199)';}
+            }
+            else{
+                alert("Enter valid marks");
+                document.getElementById('res5').innerHTML="Enter valid marks";
+                document.getElementById('res5').style.color='white';
+                document.getElementById('res5').style.backgroundColor='red';
+                document.getElementById('res5').style.fontSize='smaller';
+                err++;
+            }
+
+
+            if(err==0){
+            var Percentage=(parseFloat(s1)+parseFloat(s2)+parseFloat(s3)+parseFloat(s4)+parseFloat(s5))/5;
+            document.getElementById('res').innerHTML=Percentage.toFixed(2);
+            if(Percentage>=95)
+            {document.getElementById('grade').innerHTML='A+';
+                document.getElementById('grade').style.backgroundColor='greenyellow';
+                document.getElementById('res').style.backgroundColor='greenyellow';
+            }
+            else if(Percentage>=85)
+            {document.getElementById('grade').innerHTML='A';}
+            else if(Percentage>=75)
+            {document.getElementById('grade').innerHTML='B';}
+            else if(Percentage>=65)
+            {document.getElementById('grade').innerHTML='C';}
+            else if(Percentage>=55)
+            {document.getElementById('grade').innerHTML='D';}
+            else if(Percentage>=45)
+            {document.getElementById('grade').innerHTML='E';}
+            else
+            {document.getElementById('grade').innerHTML='F';
+            document.getElementById('grade').style.backgroundColor='red';
+            document.getElementById('grade').style.color='white';
+            }
+            }
+            else
+            {
+            document.getElementById('res').innerHTML='Error';
+            document.getElementById('res').style.backgroundColor='red';
+            document.getElementById('res').style.color='white';
+                document.getElementById('grade').innerHTML='Error';
+            document.getElementById('grade').style.backgroundColor='red';
+            document.getElementById('grade').style.color='white';
+            }
+        }
+       document.addEventListener("keydown",function(event){
+        var key=event.key;
+        if(key==="Enter")
+        {
+            result();
+        }
+        else if(key==="Escape")
+        {
+            document.getElementById('res5').innerHTML='',document.getElementById('res').innerHTML='', document.getElementById('grade').innerHTML='',document.getElementById('res1').innerHTML='',document.getElementById('res2').innerHTML='',document.getElementById('res3').innerHTML='',document.getElementById('res4').innerHTML='';
+        }
+       })
+    </script>
+</body>
+</html>
